@@ -3,36 +3,37 @@
 # Formula source: https://github.com/luoyuctl/homebrew-tap/blob/main/Formula/agenttrace.rb
 
 class Agenttrace < Formula
-  desc "AI Agent Session Analyzer — find hanging, token waste & quality regressions"
+  desc "TUI observability for AI coding agent sessions, cost, latency, and anomalies"
   homepage "https://github.com/luoyuctl/agenttrace"
-  version "0.0.4"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.0.4/agenttrace-darwin-arm64"
-      sha256 "f597822dd78e1290755ab7302e5dab5d72fc6c2a424d884a9d43b32056e6a7f1"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.2/agenttrace-darwin-arm64"
+      sha256 "59f4db9aaa72843f5c3cc16f5c427ad61ad6d73cff683a201d569c14da3738f6"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.0.4/agenttrace-darwin-amd64"
-      sha256 "9073e6e7af5ac827dcfd8f3e4e835fed498c1db79a9fb4a4f109310bc00eb46e"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.2/agenttrace-darwin-amd64"
+      sha256 "5cce56feba412c33d87c24934d25699abc070b95b0285d02fa6a1729e00d07d8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.0.4/agenttrace-linux-arm64"
-      sha256 "8fd18350f2e88b9a245b9b19396c3949eb0bfe1dc03edde3d0e0ace20e523273"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.2/agenttrace-linux-arm64"
+      sha256 "a29a4aeac0b7768800da65df908bc69bf929a802663d6fd4e49b272a8285fa5d"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.0.4/agenttrace-linux-amd64"
-      sha256 "760e05e6ba8053e22dca43b76ebdd6fcf24896d4c691a28aac9b886d6fbc7ab3"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.2/agenttrace-linux-amd64"
+      sha256 "f01e340ad8b3e8d71f2628dd7e85086a2bb6214366238441bb446779963dbae1"
     end
   end
 
   def install
     bin.install Dir["agenttrace-*"].first => "agenttrace"
+    chmod 0755, bin/"agenttrace"
   end
 
   test do
-    assert_match "agenttrace v0.0", shell_output("#{bin}/agenttrace --list-models 2>&1")
+    assert_match "agenttrace v0.3.2", shell_output("#{bin}/agenttrace --version")
   end
 end
