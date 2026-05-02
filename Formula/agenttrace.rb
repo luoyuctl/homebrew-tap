@@ -5,26 +5,26 @@
 class Agenttrace < Formula
   desc "TUI observability for AI coding agent sessions, cost, latency, and anomalies"
   homepage "https://github.com/luoyuctl/agenttrace"
-  version "0.3.5"
+  version "0.3.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.5/agenttrace-darwin-arm64"
-      sha256 "f20e957f6c26918d80781829a5b26d427233dd4d8bc3b0ed83086e8068e1a347"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.6/agenttrace-darwin-arm64"
+      sha256 "2d0afbec32dfd09523e92263d87a7858b3f17f540b8734cc7697aab186b8602c"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.5/agenttrace-darwin-amd64"
-      sha256 "b5288e23909d32336977705d65de8b8bb990049098c822f6cc7da50490b344ae"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.6/agenttrace-darwin-amd64"
+      sha256 "0c3b66ab539d8753a631ee406bf5095b33b27af582d58e0dc4e246defdf60eb6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.5/agenttrace-linux-arm64"
-      sha256 "563d3212cf2e5375bf2b93befa6d17e39cc663fd8212a9c10675604ab143d064"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.6/agenttrace-linux-arm64"
+      sha256 "19dbb3686f77a5ad49ec15b9dabdd71ff686c2aa963335c07b725ddfe4d11318"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.5/agenttrace-linux-amd64"
-      sha256 "c61aed081d39a7b08a708da3631f68e6e837caec627eb7813cbfa52a257aaa5b"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.6/agenttrace-linux-amd64"
+      sha256 "5b31a2d5b8379d2c0cdecfdeffab96bdae06331531eadf0d2b0800c00008aeb4"
     end
   end
 
@@ -34,6 +34,6 @@ class Agenttrace < Formula
   end
 
   test do
-    assert_match "agenttrace v0.3.5", shell_output("#{bin}/agenttrace --version")
+    assert_match "agenttrace v0.3.6", shell_output("#{bin}/agenttrace --version")
   end
 end
