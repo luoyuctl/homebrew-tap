@@ -5,26 +5,26 @@
 class Agenttrace < Formula
   desc "TUI observability for AI coding agent sessions, cost, latency, and anomalies"
   homepage "https://github.com/luoyuctl/agenttrace"
-  version "0.3.15"
+  version "0.3.16"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.15/agenttrace-darwin-arm64"
-      sha256 "3317ccdb249d22bc2916d6e1cb41f9a5866a6471ae1977fdf351b5bcf218145f"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.16/agenttrace-darwin-arm64"
+      sha256 "39f78cfac8982f04caf900daed3b7349667fe50a600e055c4206d1cbcd6b1ea3"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.15/agenttrace-darwin-amd64"
-      sha256 "01bc60de2c3dd24f0585a2caee31e3e4a075a3ca4adbc4bba12309b31e17e870"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.16/agenttrace-darwin-amd64"
+      sha256 "dadf74c73378733a8cce2dfe89acd84588f538e5470b7bc940d2dc5ab4b590bf"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.15/agenttrace-linux-arm64"
-      sha256 "ace3478489787bffa7acf0b73838c1a0977b76a5fc00cd512ca593c79ed17e6b"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.16/agenttrace-linux-arm64"
+      sha256 "b7a3c4f7d9c9298882616750fc9c99faadc02c28fb9465ebde16290cecd6284d"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.15/agenttrace-linux-amd64"
-      sha256 "2f0425feb6b616676fb326d83d2a0673b4320a9b89eeed654dbaa154b9a25f24"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.3.16/agenttrace-linux-amd64"
+      sha256 "b2f44ac0c9c82a26cbdce028b5ff12236062d151b7c55023e31f0cee4f08e5fe"
     end
   end
 
@@ -34,6 +34,6 @@ class Agenttrace < Formula
   end
 
   test do
-    assert_match "agenttrace v0.3.15", shell_output("#{bin}/agenttrace --version")
+    assert_match "agenttrace v0.3.16", shell_output("#{bin}/agenttrace --version")
   end
 end
