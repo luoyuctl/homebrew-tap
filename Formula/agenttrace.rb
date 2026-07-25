@@ -1,30 +1,26 @@
-# Homebrew Formula for agenttrace
-# Usage: brew install luoyuctl/tap/agenttrace
-# Formula source: https://github.com/luoyuctl/homebrew-tap/blob/main/Formula/agenttrace.rb
-
 class Agenttrace < Formula
-  desc "TUI observability for AI coding agent sessions, cost, latency, and anomalies"
+  desc "TUI observability for AI coding-agent session history, cost, latency, and anomalies"
   homepage "https://github.com/luoyuctl/agenttrace"
-  version "0.4.6"
+  version "0.7.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.4.6/agenttrace-darwin-arm64"
-      sha256 "70a001d17762ebd3c29863b30da89f894db37e56840d4c93200fb720d4b65e63"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.7.7/agenttrace-darwin-arm64"
+      sha256 "3126fc12ddf61ae2323db145ee1d1ac7851996d337f4ea320a79f4adf38e63bc"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.4.6/agenttrace-darwin-amd64"
-      sha256 "2306efdb235ab1d9cf6285dead68cb636a7979c22b264572f03489ac05ee3ac5"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.7.7/agenttrace-darwin-amd64"
+      sha256 "6af7cd603e8ae3277183d880318fbf3428cbaa76bb1cd87d30c54e4bdb68c108"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.4.6/agenttrace-linux-arm64"
-      sha256 "7fb146d28964cdde3eb5951902b911c32e0cbf8af5a4cc95c365ece709680f7f"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.7.7/agenttrace-linux-arm64"
+      sha256 "bf393f63612b95881cfe5f94cbbb82ddc6bef8c0d9fd643a616227390be0e258"
     else
-      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.4.6/agenttrace-linux-amd64"
-      sha256 "a3ab18c17ad2cd355fd1509b4077092f7d5182e11376294011d59d49760f4371"
+      url "https://github.com/luoyuctl/agenttrace/releases/download/v0.7.7/agenttrace-linux-amd64"
+      sha256 "387ed1a93ef268f5fee9ce592a083fe3fbddf5b04cb463f530036ed9e3f0b2f7"
     end
   end
 
@@ -34,6 +30,6 @@ class Agenttrace < Formula
   end
 
   test do
-    assert_match "agenttrace v0.4.6", shell_output("#{bin}/agenttrace --version")
+    assert_match "agenttrace v0.7.7", shell_output("\#{bin}/agenttrace --version")
   end
 end
